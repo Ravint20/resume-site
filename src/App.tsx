@@ -4,98 +4,100 @@ import './App.css';
 function App() {
   return (
     <div className="page">
-      <header className="header">
-        <p className="kicker">Résumé</p>
-        <h1 className="name">{profile.name}</h1>
-        <p className="role">{profile.role}</p>
-        <div className="meta">
-          <span>{profile.location}</span>
-          <span className="dot">·</span>
-          <a href={`mailto:${profile.email}`}>{profile.email}</a>
-          <span className="dot">·</span>
-          <a href={`https://${profile.github.replace(/^\[|\]$/g, '')}`}>{profile.github}</a>
-          <span className="dot">·</span>
-          <a href={`https://${profile.linkedin.replace(/^\[|\]$/g, '')}`}>{profile.linkedin}</a>
+      <header className="hero">
+        <img className="avatar" src="/profile.png" alt={`${profile.name} profile`} />
+        <div className="hero-copy">
+          <p className="eyebrow">Frontend engineering / ML transition</p>
+          <h1 className="name">{profile.name}</h1>
+          <p className="role">{profile.role}</p>
+          <p className="summary">{profile.summary}</p>
+        </div>
+        <div className="hero-status">
+          <span className="status-dot" />
+          <span>Open to the next chapter</span>
         </div>
       </header>
 
-      <section className="summary">
-        <p>{profile.summary}</p>
-      </section>
+      <div className="layout">
+        <aside className="sidebar">
+          <div className="side-block">
+            <p className="side-label">Contact</p>
+            <div className="contact-list">
+              <span>{profile.location}</span>
+              <a href={`mailto:${profile.email}`}>{profile.email}</a>
+              <a href={externalUrl(profile.github)} target="_blank" rel="noreferrer">GitHub ↗</a>
+              <a href={externalUrl(profile.linkedin)} target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            </div>
+          </div>
 
-      <Section title="Experience">
-        <div className="timeline">
-          {experience.map((job, i) => (
-            <article className="entry" key={i}>
-              <div className="entry-rule" aria-hidden="true" />
-              <div className="entry-body">
-                <div className="entry-head">
-                  <h3>
-                    {job.role} <span className="at">at {job.company}</span>
-                  </h3>
-                  <span className="period">{job.period}</span>
-                </div>
-                <p className="context">{job.context}</p>
-                <ul>
-                  {job.bullets.map((b, j) => (
-                    <li key={j}>{b}</li>
-                  ))}
-                </ul>
-                {job.stack.length > 0 && (
-                  <div className="stack">
-                    {job.stack.map((s) => (
-                      <span className="pill" key={s}>
-                        {s}
-                      </span>
-                    ))}
+          <div className="side-block">
+            <p className="side-label">Core toolkit</p>
+            <div className="toolkit">
+              {skills[0].items.slice(0, 5).map((skill) => <span key={skill}>{skill}</span>)}
+            </div>
+          </div>
+
+          <div className="side-block education-side">
+            <p className="side-label">Education</p>
+            {education.map((item) => (
+              <div className="education-item" key={item.title}>
+                <strong>{item.title}</strong>
+                <span>{item.org}</span>
+                <small>{item.period}</small>
+              </div>
+            ))}
+          </div>
+        </aside>
+
+        <main className="content">
+          <Section index="01" title="Experience">
+            <div className="timeline">
+              {experience.map((job, i) => (
+                <article className="entry" key={i}>
+                  <div className="entry-marker" aria-hidden="true">0{i + 1}</div>
+                  <div className="entry-body">
+                    <div className="entry-head">
+                      <div>
+                        <h3>{job.role}</h3>
+                        <p className="company">{job.company}</p>
+                      </div>
+                      <span className="period">{job.period}</span>
+                    </div>
+                    <p className="context">{job.context}</p>
+                    {job.bullets.length > 0 && (
+                      <ul>{job.bullets.map((bullet, j) => <li key={j}>{bullet}</li>)}</ul>
+                    )}
+                    {job.stack.length > 0 && <div className="stack">{job.stack.map((skill) => <span className="pill" key={skill}>{skill}</span>)}</div>}
                   </div>
-                )}
-              </div>
-            </article>
-          ))}
-        </div>
-      </Section>
-
-      <Section title={transition.heading}>
-        <p className="transition-intro">{transition.intro}</p>
-        <div className="log">
-          {transition.items.map((item, i) => (
-            <div className="log-entry" key={i}>
-              <h4>{item.title}</h4>
-              <p>{item.detail}</p>
+                </article>
+              ))}
             </div>
-          ))}
-        </div>
-      </Section>
+          </Section>
 
-      <Section title="Skills">
-        <div className="skill-groups">
-          {skills.map((g) => (
-            <div className="skill-group" key={g.group}>
-              <h4>{g.group}</h4>
-              <div className="stack">
-                {g.items.map((s) => (
-                  <span className="pill" key={s}>
-                    {s}
-                  </span>
-                ))}
-              </div>
+          <Section index="02" title="Current direction">
+            <p className="transition-intro">{transition.intro}</p>
+            <div className="log">
+              {transition.items.map((item, i) => (
+                <article className="log-entry" key={i}>
+                  <span className="log-number">0{i + 1}</span>
+                  <div><h4>{item.title}</h4><p>{item.detail}</p></div>
+                </article>
+              ))}
             </div>
-          ))}
-        </div>
-      </Section>
+          </Section>
 
-      <Section title="Education & Certifications">
-        <div className="edu-list">
-          {education.map((e, i) => (
-            <div className="edu-entry" key={i}>
-              <span className="edu-title">{e.title}</span>
-              <span className="edu-org">{e.org}</span>
-              <span className="edu-period">{e.period}</span>
+          <Section index="03" title="Skills">
+            <div className="skill-groups">
+              {skills.map((group) => (
+                <div className="skill-group" key={group.group}>
+                  <h4>{group.group}</h4>
+                  <div className="stack">{group.items.map((skill) => <span className="pill" key={skill}>{skill}</span>)}</div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </Section>
+          </Section>
+        </main>
+      </div>
 
       <footer className="footer">
         <p>All rights reserved to ravinsan.</p>
@@ -104,13 +106,18 @@ function App() {
   );
 }
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+function Section({ index, title, children }: { index: string; title: string; children: React.ReactNode }) {
   return (
     <section className="section">
-      <h2 className="section-title">{title}</h2>
+      <div className="section-heading"><span>{index}</span><h2 className="section-title">{title}</h2></div>
       {children}
     </section>
   );
+}
+
+function externalUrl(value: string) {
+  const cleanValue = value.replace(/^\[|\]$/g, '');
+  return cleanValue.startsWith('http') ? cleanValue : `https://${cleanValue}`;
 }
 
 export default App;

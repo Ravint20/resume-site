@@ -1,8 +1,4 @@
-// ─────────────────────────────────────────────────────────────
-// Edit everything in this file to update your resume.
-// Anything wrapped in [ ] is a placeholder — fill in your own
-// details before deploying. Nothing else needs to change.
-// ─────────────────────────────────────────────────────────────
+
 
 export const profile = {
   name: 'Ravinsan',
@@ -33,7 +29,7 @@ export const experience = [
     company: 'SenzMate IoT Intelligence',
     role: 'senior software engineer',
     period: 'May-2017 — April-2023',
-    context: '[One line on what this role covered]',
+    context: 'Mobile and web applications for IoT device management and analytics',
     bullets: [],
     stack: ['React','Nodejs','TypeScript', 'React Hook Form', 'MUI', 'Jest'],
   },
@@ -42,7 +38,7 @@ export const experience = [
 export const transition = {
   heading: 'ML/AI transition — in progress',
   intro:
-    'Running a phased, self-directed curriculum toward an ML/AI engineering role by early 2027: Python fundamentals → core ML theory → applied agents/RAG → portfolio.',
+    'Rapidly transitioning toward an ML/AI engineering role, Python fundamentals → core ML theory → applied agents/RAG → portfolio.',
   items: [
     {
       title: 'Hugging Face Agents Course',
@@ -74,7 +70,7 @@ export const skills = [
   },
   {
     group: 'ML / AI (in progress)',
-    items: ['Python', 'NumPy', 'Pandas', 'LangChain', 'smolagents', 'RAG', 'Embeddings'],
+    items: ['Python', 'NumPy', 'Pandas', 'PyTorch', 'LangChain', 'smolagents', 'RAG', 'Embeddings'],
   },
   {
     group: 'Practices',
