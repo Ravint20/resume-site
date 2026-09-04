@@ -98,7 +98,7 @@ function App() {
       </Section>
 
       <footer className="footer">
-        <p>Built with React · Deployed on Cloudflare Pages</p>
+        <p>All rights reserved to ravinsan.</p>
       </footer>
     </div>
   );

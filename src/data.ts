@@ -9,7 +9,7 @@ export const profile = {
   role: 'Frontend Engineer → ML/AI Engineer in transition',
   location: 'Dubai, UAE',
   email: 'ravinsant20@gmail.com',
-  github: '[github.com/Ravint20',
+  github: 'github.com/Ravint20',
   linkedin: 'www.linkedin.com/in/ravinsan-paramesvaram-33223b11b',
   summary:
     'Frontend engineer with 9+ years building production React/TypeScript applications, currently executing a structured, self-directed transition into ML/AI engineering — pairing hands-on coursework with a working understanding of how the systems I already build will need to change.',
