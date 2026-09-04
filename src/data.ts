@@ -34,6 +34,7 @@ export const experience = [
     role: 'senior software engineer',
     period: 'May-2017 — April-2023',
     context: '[One line on what this role covered]',
+    bullets: [],
     stack: ['React','Nodejs','TypeScript', 'React Hook Form', 'MUI', 'Jest'],
   },
 ];
