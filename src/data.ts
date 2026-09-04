@@ -8,11 +8,11 @@ export const profile = {
   name: 'Ravinsan',
   role: 'Frontend Engineer → ML/AI Engineer in transition',
   location: 'Dubai, UAE',
-  email: '[your.email@example.com]',
-  github: '[github.com/yourhandle]',
-  linkedin: '[linkedin.com/in/yourhandle]',
+  email: 'ravinsant20@gmail.com',
+  github: '[github.com/Ravint20',
+  linkedin: 'www.linkedin.com/in/ravinsan-paramesvaram-33223b11b',
   summary:
-    'Frontend engineer with 5+ years building production React/TypeScript applications, currently executing a structured, self-directed transition into ML/AI engineering — pairing hands-on coursework with a working understanding of how the systems I already build will need to change.',
+    'Frontend engineer with 9+ years building production React/TypeScript applications, currently executing a structured, self-directed transition into ML/AI engineering — pairing hands-on coursework with a working understanding of how the systems I already build will need to change.',
 };
 
 export const experience = [
@@ -31,11 +31,10 @@ export const experience = [
   },
   {
     company: 'SenzMate IoT Intelligence',
-    role: '[Previous role]',
+    role: 'senior software engineer',
     period: 'May-2017 — April-2023',
     context: '[One line on what this role covered]',
-    bullets: ['[Add earlier experience here, or delete this entry]'],
-    stack: [],
+    stack: ['React','Nodejs','TypeScript', 'React Hook Form', 'MUI', 'Jest']],
   },
 ];
 
